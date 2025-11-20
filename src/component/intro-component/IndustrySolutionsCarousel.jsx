@@ -97,8 +97,8 @@ const IndustryCard = ({ title, imageUrl, altText, hoverBg, details, icon }) => {
                 </div>
             </div>
             {/* Hover State */}
-            <div className={`absolute inset-0 p-6 flex flex-col justify-start transition-opacity duration-500 ease-in-out opacity-0 group-hover:opacity-100 ${hoverBg}`}>
-                <h2 className="text-2xl font-bold text-gray-800 mb-6">{title}</h2>
+            <div className={`absolute inset-0 p-6 flex flex-col justify-start transition-opacity duration-500 ease-in-out opacity-0 group-hover:opacity-100 bg-gradient-to-t from-orange-200 to-white`}>
+                <h2 className="text-2xl font-bold text-black mb-6 border-b-1 border-gray-400">{title}</h2>
                 <ul className="space-y-3 text-gray-700">
                     {details.map((item, index) => (
                         <li key={index} className="flex items-start">
@@ -107,7 +107,7 @@ const IndustryCard = ({ title, imageUrl, altText, hoverBg, details, icon }) => {
                         </li>
                     ))}
                 </ul>
-                <div className="mt-auto flex justify-center relative left-20">
+                <div className="mt-auto flex justify-center relative left-15">
                     {icon}
                 </div>
             </div>
