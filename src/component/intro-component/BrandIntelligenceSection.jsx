@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import Brand from "../../assets/images/brand-intel-img-2.png"
+// import Brand from "../../assets/images/brand-intel-img-2.png"
 import vector1 from "../../assets/images/vector/Vector-1.png"
 import vector2 from "../../assets/images/vector/Vector-2.png"
 
@@ -102,7 +102,7 @@ const BrandIntelligenceSection = () => {
                 <>
                   {/* Image Area */}
                   <div className="w-full mb-4 rounded-lg overflow-hidden shadow-lg h-48 sm:h-64 md:h-72">
-                    <img src={Brand} alt="Brand" />
+                    {/* <img src={Brand} alt="Brand" /> */}
                                       </div>
 
                   {/* Text Description */}
