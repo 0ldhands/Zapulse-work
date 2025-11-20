@@ -2,7 +2,7 @@ import React from 'react'
 import Header from '../component/Header'
 import Welcome from '../component/intro-component/Welcome'
 import Companylogo from '../component/intro-component/Companylogo'
-import BrandIntelligenceSection from '../component/intro-component/BrandIntelligenceSection'
+// import BrandIntelligenceSection from '../component/intro-component/BrandIntelligenceSection'
 import PartnershipSection from '../component/intro-component/Partnershipbrand'
 import Brandstrategy from "../component/intro-component/Brandstrategy"
 import AchievementsSection from '../component/intro-component/Achievments'
@@ -20,7 +20,7 @@ const Homelayout = () => {
         <Header/>
         <Welcome/>
         <Companylogo/>
-        <BrandIntelligenceSection/>
+        {/* <BrandIntelligenceSection/> */}
         <PartnershipSection/>
         <Brandstrategy/>
         <AchievementsSection/>
