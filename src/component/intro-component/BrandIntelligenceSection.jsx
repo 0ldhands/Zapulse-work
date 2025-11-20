@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
-import Brand from "../../../assets/images/brand-intel-img-2.png"
-import vector1 from "../../../assets/images/vector/vector-1.png"
-import vector2 from "../../../assets/images/vector/vector-2.png"
+import Brand from "../../assets/images/brand-intel-img-2.png"
+import vector1 from "../../assets/images/vector/vector-1.png"
+import vector2 from "../../assets/images/vector/vector-2.png"
 
 // Define the content for each tab
 const tabs = [
