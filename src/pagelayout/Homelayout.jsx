@@ -24,7 +24,7 @@ const Homelayout = () => {
         <PartnershipSection/>
         <Brandstrategy/>
         <AchievementsSection/>
-        {/* <IndustrySolutionsCarousel/> */}
+        <IndustrySolutionsCarousel/>
         <Addondata/>
         <SuccessStoryCard/>
         <ValueAddedServices/>

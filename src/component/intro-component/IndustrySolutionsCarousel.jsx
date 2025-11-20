@@ -11,7 +11,7 @@ import { HiCurrencyDollar } from "react-icons/hi2";
 import { FaBookMedical } from "react-icons/fa6";
 import { IoIosCheckmarkCircle } from "react-icons/io";
 
-// --- Industry Data (kept the same for brevity) ---
+// --- Industry Data (kept the same) ---
 const industryData = [
     {
         title: "Ecommerce",
@@ -24,7 +24,7 @@ const industryData = [
             "Track inventory availability across retailers."
         ],
         icon: (
-           <IoCart size={150} className='text-orange-300'/>
+            <IoCart size={150} className='text-orange-300'/>
         )
     },
     {
@@ -38,7 +38,7 @@ const industryData = [
             "Forecast subscription churn with precision."
         ],
         icon: (
-           <PiMonitorFill size={150}  className='text-orange-300'/>
+            <PiMonitorFill size={150} className='text-orange-300'/>
         )
     },
     {
@@ -52,7 +52,7 @@ const industryData = [
             "Scrape travel review platforms for sentiment."
         ],
         icon: (
-           <MdOutlineFlightTakeoff size={150}  className='text-orange-300'/>
+            <MdOutlineFlightTakeoff size={150} className='text-orange-300'/>
         )
     },
     {
@@ -66,7 +66,7 @@ const industryData = [
             "Track investment trends and news velocity."
         ],
         icon: (
-          <HiCurrencyDollar size={150}  className='text-orange-300'/>
+            <HiCurrencyDollar size={150} className='text-orange-300'/>
         )
     },
     {
@@ -80,23 +80,24 @@ const industryData = [
             "Monitor search engine rankings and content gaps."
         ],
         icon: (
-           <FaBookMedical size={120}  className='text-orange-300'/>
+            <FaBookMedical size={120} className='text-orange-300'/>
         )
     }
 ];
 
-// Inner Card Component (Helper Function) - Remains the same
+// Inner Card Component (Helper Function)
 const IndustryCard = ({ title, imageUrl, altText, hoverBg, details, icon }) => {
     return (
         <div className={`group relative w-72 h-96 overflow-hidden rounded-xl shadow-xl cursor-pointer flex-shrink-0 transition-transform duration-500`}>
-            {/* Initial State */}
+            {/* Initial State (Image View) */}
             <div className={`absolute inset-0 transition-opacity duration-500 ease-in-out group-hover:opacity-0`}>
                 <img src={imageUrl} alt={altText} className="w-full h-full object-cover"/>
                 <div className="absolute inset-x-0 bottom-0 h-1/4 flex items-end p-5 bg-gradient-to-t from-black/100 to-transparent">
                     <h2 className="text-2xl font-semibold text-white">{title}</h2>
                 </div>
             </div>
-            {/* Hover State */}
+            {/* Hover State (Details View) */}
+            {/* Note: The design for the SaaS and technology hover state shows a light yellow background and an icon/illustration at the bottom. */}
             <div className={`absolute inset-0 p-6 flex flex-col justify-start transition-opacity duration-500 ease-in-out opacity-0 group-hover:opacity-100 bg-gradient-to-t from-orange-200 to-white`}>
                 <h2 className="text-2xl font-bold text-black mb-6 border-b-1 border-gray-400">{title}</h2>
                 <ul className="space-y-3 text-gray-700">
@@ -107,6 +108,7 @@ const IndustryCard = ({ title, imageUrl, altText, hoverBg, details, icon }) => {
                         </li>
                     ))}
                 </ul>
+                {/* Icon/Illustration Container */}
                 <div className="mt-auto flex justify-center relative left-15">
                     {icon}
                 </div>
@@ -118,12 +120,9 @@ const IndustryCard = ({ title, imageUrl, altText, hoverBg, details, icon }) => {
 
 // Main Combined Component
 const IndustryCardSection = () => {
-    // 1. Initialize the ref for the scrolling container
     const scrollContainerRef = useRef(null);
-    // Defines how much to scroll on each click (e.g., width of one card + gap)
     const scrollAmount = 320; 
 
-    // 2. Scroll Left Function
     const scrollLeft = () => {
         if (scrollContainerRef.current) {
             scrollContainerRef.current.scrollBy({
@@ -133,7 +132,6 @@ const IndustryCardSection = () => {
         }
     };
 
-    // 3. Scroll Right Function
     const scrollRight = () => {
         if (scrollContainerRef.current) {
             scrollContainerRef.current.scrollBy({
@@ -144,64 +142,50 @@ const IndustryCardSection = () => {
     };
 
     return (
-        <>
-            {/* 4. Custom CSS for Scrollbar Hiding (Recommended to be in a global CSS file) */}
-            <style jsx global>{`
-                /* Hide scrollbar for Chrome, Safari and Opera */
-                .scrollbar-hide::-webkit-scrollbar {
-                    display: none;
-                }
-                /* Hide scrollbar for IE, Edge and Firefox */
-                .scrollbar-hide {
-                    -ms-overflow-style: none;  /* IE and Edge */
-                    scrollbar-width: none;  /* Firefox */
-                }
-            `}</style>
+        <section className="py-20 bg-white">
+            {/* Header Content */}
+            <div className="max-w-4xl mx-auto text-center mb-12 px-4">
+                <h1 className="text-4xl sm:text-5xl font-medium text-gray-900 mb-4">
+                    Engineering growth across <br /> industries systematically
+                </h1>
+                <p className="text-gray-600 max-w-2xl mx-auto text-sm">
+                    Our data doesn't just guide, it empowers. Our web scraping service provides the intelligence you need to achieve your key business objectives.
+                </p>
+            </div>
             
-            <section className="py-10 bg-white px-5">
-                {/* Header Content */}
-                <div className="max-w-4xl mx-auto text-center mb-12 px-4">
-                    <h1 className="text-4xl font-medium text-gray-900 mb-4">
-                        Engineering growth across <br /> industries systematically
-                    </h1>
-                    <p className="text-gray-600 max-w-2xl mx-auto">
-                        Our data doesn't just guide, it empowers. Our web scraping service provides the intelligence you need to achieve your key business objectives.
-                    </p>
+            {/* Cards Container */}
+            <div className="relative">
+                <div 
+                    ref={scrollContainerRef}
+                    // FIX: Using arbitrary values to hide the scrollbar without the jsx/global props
+                    className={`flex justify-start sm:justify-center overflow-x-scroll gap-8 px-4 sm:px-12 pb-4 
+                                [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]`}
+                >
+                    {industryData.map((card, index) => (
+                        <IndustryCard 
+                            key={index}
+                            {...card} 
+                        />
+                    ))}
                 </div>
-                
-                {/* Cards Container */}
-                <div className="relative">
-                    <div 
-                        // 1. Attach the ref here
-                        ref={scrollContainerRef}
-                        className="flex justify-start sm:justify-center overflow-x-scroll gap-8 px-4 sm:px-12 pb-4 scrollbar-hide"
-                    >
-                        {industryData.map((card, index) => (
-                            <IndustryCard 
-                                key={index}
-                                {...card} 
-                            />
-                        ))}
-                    </div>
 
-                    {/* Navigation Arrows (Functional) */}
-                    <div className="flex absolute bottom-[-60px] right-8 transform -translate-y-1/2 space-x-2">
-                        <button 
-                            onClick={scrollLeft} // Attached handler
-                            className="p-2 border border-gray-300 rounded-full text-gray-700 hover:bg-gray-100 transition-colors"
-                        >
-                            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 19l-7-7 7-7"></path></svg>
-                        </button>
-                        <button 
-                            onClick={scrollRight} // Attached handler
-                            className="p-2 border border-black rounded-full text-white bg-black hover:bg-gray-800 transition-colors"
-                        >
-                            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7"></path></svg>
-                        </button>
-                    </div>
+                {/* Navigation Arrows (Functional) */}
+                <div className="flex absolute bottom-[-60px] right-8 transform -translate-y-1/2 space-x-2">
+                    <button 
+                        onClick={scrollLeft}
+                        className="p-2 border border-gray-300 rounded-full text-gray-700 hover:bg-gray-100 transition-colors"
+                    >
+                        <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 19l-7-7 7-7"></path></svg>
+                    </button>
+                    <button 
+                        onClick={scrollRight}
+                        className="p-2 border border-black rounded-full text-white bg-black hover:bg-gray-800 transition-colors"
+                    >
+                        <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7"></path></svg>
+                    </button>
                 </div>
-            </section>
-        </>
+            </div>
+        </section>
     );
 };
 
