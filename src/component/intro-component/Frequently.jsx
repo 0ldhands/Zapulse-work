@@ -44,7 +44,7 @@ const FAQSection = () => {
     const SmallFAQItems = faqItems.filter(item => !item.large);
 
     return (
-        <section className="py-20 bg-gradient-to-b from-tansparent to-orange-200 min-h-screen">
+        <section className="py-20 bg-gradient-to-b from-tansparent to-orange-200 min-h-screen pb-60">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 {/* Section Title */}
                 <h2 className="text-4xl sm:text-5xl font-extrabold text-gray-800 text-center mb-16">

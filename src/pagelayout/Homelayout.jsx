@@ -12,6 +12,7 @@ import SuccessStoryCard from '../component/intro-component/Successstory'
 import ValueAddedServices from '../component/intro-component/Valueadded'
 import Knowledgepage from "../component/intro-component/Knowledgepage"
 import FAQSection from '../component/intro-component/Frequently'
+import Footer from "../component/Footer"
 
 const Homelayout = () => {
   return (
@@ -29,6 +30,7 @@ const Homelayout = () => {
         <ValueAddedServices/>
         <Knowledgepage/>
         <FAQSection/>
+        <Footer/>
     </div>
   )
 }
