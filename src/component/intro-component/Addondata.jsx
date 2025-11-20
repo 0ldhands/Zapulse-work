@@ -11,7 +11,7 @@ const Addondata = () => {
                          clipPath: 'polygon(70% 0, 100% 0, 100% 100%, 50% 100%, 70% 50%)' // Adjust as needed
                      }}>
                 </div>
-                {/* Smaller star-like shape (or abstract burst) */}
+                
                 <div className="absolute left-1/4 bottom-1/4 w-32 h-32 bg-amber-100 opacity-60 rounded-full animate-pulse-slow"
                      style={{
                          transform: 'rotate(45deg)',
@@ -39,10 +39,8 @@ const Addondata = () => {
                     </button>
                 </div>
 
-                {/* Optional: You could place an image or another illustration here on larger screens */}
-                {/* For this design, the right side is mostly background shapes */}
                 <div className="hidden lg:block lg:w-2/5">
-                    {/* Placeholder for potential future content or just to maintain structure */}
+                 
                 </div>
             </div>
         </section>

@@ -24,7 +24,7 @@ const CTABannerComponent = () => {
             {/* --- Content Container --- */}
             <div className="relative z-10 max-w-4xl mx-auto text-center">
                 {/* Main Headline with Text Gradient (top to bottom blue) */}
-                <h2 className="text-4xl sm:text-5xl lg:text-6xl font-medium leading-tight mb-4
+                <h2 className="text-2xl sm:text-3xl lg:text-5xl font-medium leading-tight mb-4
                            bg-blue-600 
                            text-transparent bg-clip-text">
                     Your data-powered future starts here

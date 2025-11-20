@@ -1,7 +1,11 @@
 import React from "react";
 import logo from "../assets/logo/logo.png"
+import { useNavigate } from "react-router-dom";
 
 export default function Header() {
+
+  const navi=useNavigate()
+
   return (
     <nav className="w-full flex items-center justify-between px-8 py-4 bg-white shadow-sm">
       {/* Logo */}
@@ -24,7 +28,7 @@ export default function Header() {
       </ul>
 
       {/* Contact Button (Pure Tailwind) */}
-      <button className="bg-red-600 hover:bg-red-700 text-white px-6 py-2 rounded-lg text-sm font-semibold shadow-sm">
+      <button className="bg-red-600 hover:bg-red-700 text-white px-6 py-2 rounded-lg text-sm font-semibold shadow-sm" onClick={()=>navi('/Contact')}>
         Contact Us ↗
       </button>
     </nav>

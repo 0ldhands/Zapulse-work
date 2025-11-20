@@ -6,7 +6,7 @@ const achievementData = [
     value: '100%',
     label: 'Accuracy',
     description: 'Ensures every detail of the data you receive is correct and reliable.',
-    bgColor: 'bg-blue-100', // Light blue background
+    bgColor: 'bg-blue-100', 
     textColor: 'text-blue-600',
     buttonColor: 'bg-blue-500',
     buttonTextColor: 'text-white',
@@ -16,7 +16,7 @@ const achievementData = [
     value: '1000+',
     label: 'Websites',
     description: 'We expertly extract data from over 1,000 global websites for maximum depth.',
-    bgColor: 'bg-orange-100', // Light orange background
+    bgColor: 'bg-orange-100', 
     textColor: 'text-orange-600',
     buttonColor: 'bg-orange-200',
     buttonTextColor: 'text-orange-700',
@@ -26,7 +26,7 @@ const achievementData = [
     value: '20+',
     label: 'Countries',
     description: 'Our data provides crucial intelligence across more than 20 countries.',
-    bgColor: 'bg-green-100', // Light green background
+    bgColor: 'bg-green-100', 
     textColor: 'text-green-600',
     buttonColor: 'bg-green-200',
     buttonTextColor: 'text-green-700',
@@ -36,7 +36,7 @@ const achievementData = [
     value: '50+',
     label: 'Industries',
     description: 'We support over 50 sectors, including Manufacturing, Retail, and Marketing.',
-    bgColor: 'bg-green-100', // Light green background (same as above for consistency if needed)
+    bgColor: 'bg-green-100',
     textColor: 'text-green-600',
     buttonColor: 'bg-green-200',
     buttonTextColor: 'text-green-700',
@@ -46,7 +46,7 @@ const achievementData = [
     value: '50M',
     label: 'Records',
     description: 'We have successfully extracted and delivered over 50 million data records to clients',
-    bgColor: 'bg-blue-100', // Light blue background (same as main card for consistency if needed)
+    bgColor: 'bg-blue-100',
     textColor: 'text-blue-600',
     buttonColor: 'bg-blue-200',
     buttonTextColor: 'text-blue-700',
@@ -59,9 +59,9 @@ const AchievementsSection = () => {
       <div className="max-w-6xl mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           
-          {/* Main Accuracy Card */}
+         
           <div className="md:col-span-1 p-8 rounded-2xl shadow-lg relative overflow-hidden h-96 flex flex-col justify-end bg-blue-100">
-            {/* Background circles/waves - simplified, could be more complex with SVGs or more divs */}
+       
             <div className="absolute top-0 left-0 w-full h-full">
               <div className="absolute -top-1/4 -left-1/4 w-96 h-96 rounded-full bg-blue-200 opacity-20" style={{ transform: 'scale(1.2)' }}></div>
               <div className="absolute -top-1/2 -left-1/2 w-[600px] h-[600px] rounded-full bg-blue-200 opacity-10" style={{ transform: 'scale(1.1)' }}></div>
@@ -80,7 +80,7 @@ const AchievementsSection = () => {
             </div>
           </div>
 
-          {/* Smaller Achievement Cards */}
+        
           <div className="md:col-span-2 grid grid-cols-1 sm:grid-cols-2 gap-6">
             {achievementData.filter(item => item.type === 'small').map((item, index) => (
               <div
